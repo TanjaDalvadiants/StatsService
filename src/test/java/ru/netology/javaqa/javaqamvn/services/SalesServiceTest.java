@@ -54,7 +54,6 @@ public class SalesServiceTest {
         int actualAverageSales = service.AverageSales(sales);
 
 
-        TestCase Assertions = null;
         TestCase.assertEquals(expectedAverageSales, actualAverageSales);
     }
 

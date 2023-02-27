@@ -38,27 +38,13 @@ public class SalesService {
     }
 
     public int AverageSales(int[] sales) {
-        int summarySales = 0;// общая сумма продаж в массиве
-        int averageSales = 0;// средняя сумма продаж в массиве
-        for (int sale : sales) {
-            summarySales = sale + summarySales;
-        }
-        averageSales = summarySales / sales.length;
-
-        return averageSales;
+        return SummarySales(sales) / sales.length;
     }
 
     public int SalesBelowAverage(int[] sales) {
-        int summarySales = 0;// общая сумма продаж в массиве
-        int averageSales = 0;// средняя сумма продаж в массиве
-        for (int sale : sales) {
-            summarySales = sale + summarySales;
-        }
-        averageSales = summarySales / sales.length;
-
         int countOfMonth = 0;//количество месяцев с продажами ниже средних
         for (int sale : sales) {
-            if (sale < averageSales) {
+            if (sale < AverageSales(sales)) {
                 countOfMonth = countOfMonth + 1;
             }
         }
@@ -66,16 +52,9 @@ public class SalesService {
     }
 
     public int SalesUpperAverage(int[] sales) {
-        int summarySales = 0;// общая сумма продаж в массиве
-        int averageSales = 0;// средняя сумма продаж в массиве
-        for (int sale : sales) {
-            summarySales = sale + summarySales;
-        }
-        averageSales = summarySales / sales.length;
-
         int countOfMonth = 0;
         for (int sale : sales) {
-            if (sale > averageSales) {
+            if (sale > AverageSales(sales)) {
                 countOfMonth = countOfMonth + 1;//количество месяцев с продажами выше средних
             }
         }
