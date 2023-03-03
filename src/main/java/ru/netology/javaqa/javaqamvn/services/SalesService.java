@@ -29,7 +29,7 @@ public class SalesService {
         return maxMonth + 1;
     }
 
-    public int SummarySales(int[] sales) {
+    public int summarySales(int[] sales) {
         int summarySales = 0;// общая сумма продаж в массиве
         for (int sale : sales) {
             summarySales = sale + summarySales;
@@ -37,24 +37,26 @@ public class SalesService {
         return summarySales;
     }
 
-    public int AverageSales(int[] sales) {
-        return SummarySales(sales) / sales.length;
+    public int averageSales(int[] sales) {
+        return summarySales(sales) / sales.length;
     }
 
-    public int SalesBelowAverage(int[] sales) {
+    public int salesBelowAverage(int[] sales) {
         int countOfMonth = 0;//количество месяцев с продажами ниже средних
+        int average = averageSales(sales);
         for (int sale : sales) {
-            if (sale < AverageSales(sales)) {
+            if (sale < average) {
                 countOfMonth = countOfMonth + 1;
             }
         }
         return countOfMonth;
     }
 
-    public int SalesUpperAverage(int[] sales) {
+    public int salesUpperAverage(int[] sales) {
         int countOfMonth = 0;
+        int average = averageSales(sales);
         for (int sale : sales) {
-            if (sale > AverageSales(sales)) {
+            if (sale > average) {
                 countOfMonth = countOfMonth + 1;//количество месяцев с продажами выше средних
             }
         }

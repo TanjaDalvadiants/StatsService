@@ -38,7 +38,7 @@ public class SalesServiceTest {
         SalesService service = new SalesService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedSummarySales = 180;
-        int actualSummmarySales = service.SummarySales(sales);
+        int actualSummmarySales = service.summarySales(sales);
 
 
         TestCase Assertions = null;
@@ -51,7 +51,7 @@ public class SalesServiceTest {
         SalesService service = new SalesService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedAverageSales = 15;
-        int actualAverageSales = service.AverageSales(sales);
+        int actualAverageSales = service.averageSales(sales);
 
 
         TestCase.assertEquals(expectedAverageSales, actualAverageSales);
@@ -63,7 +63,7 @@ public class SalesServiceTest {
         SalesService service = new SalesService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedSalesBelowAverage = 5;
-        int actualSalesBelowAverage = service.SalesBelowAverage(sales);
+        int actualSalesBelowAverage = service.salesBelowAverage(sales);
 
 
         TestCase Assertions = null;
@@ -76,7 +76,7 @@ public class SalesServiceTest {
         SalesService service = new SalesService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedSalesUpperAverage = 5;
-        int actualSalesUpperAverage = service.SalesUpperAverage(sales);
+        int actualSalesUpperAverage = service.salesUpperAverage(sales);
 
 
         TestCase Assertions = null;
